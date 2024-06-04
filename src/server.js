@@ -9,7 +9,6 @@ const server = http.createServer((req, res) => {
         return res
         .setHeader('Content-type', 'application/json')
         .end(JSON.stringify(users))
-
     } 
 
     if (method === 'POST' && url === '/users'){
@@ -19,11 +18,10 @@ const server = http.createServer((req, res) => {
             email: 'johndoe@example.com',
             
         })
-        return res.end('Criação de usuário')
+        return res.writeHead(201).end()
     }
 
-    return res.end('Helloooooo')
-
+    return res.writeHead(404).end("Something is broken :( ")
 });
 
 server.listen(3333);

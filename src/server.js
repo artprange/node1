@@ -4,6 +4,12 @@ import { routes } from './routes.js';
 
 
 
+//Query Parameters: URL stateful => Filtros, paginação, não obrigatórios
+//Route Parameters: Identificação de recurso
+//Request Body: Envio de informações ed um formulário (HTTPs)
+
+
+
 const server = http.createServer(async (req, res) => {
     const { method, url} = req
 
